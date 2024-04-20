@@ -227,3 +227,37 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+
+
+
+
+
+
+
+doc_events = {
+    "Leave Application": {
+        "validate": [
+            "employee_leave_clearance.employee_leave_clearance.doctype.employee_leave_clearance_a_001_doctype.employee_leave_clearance_a_001_doctype.set_nationality",
+            "employee_leave_clearance.employee_leave_clearance.doctype.employee_leave_clearance_a_001_doctype.employee_leave_clearance_a_001_doctype.working_days_leave_application",
+        ]
+    },
+    "Salary Slip": {
+        # "on_submit":
+        "validate": [
+            # "employee_leave_clearance.employee_leave_clearance.doctype.employee_leave_clearance_a_001_doctype.employee_leave_clearance_a_001_doctype.get_latest_salary_slip",
+            # "employee_leave_clearance.employee_leave_clearance.doctype.employee_leave_clearance_a_001_doctype.employee_leave_clearance_a_001_doctype.calculate_per_day_salary_components",
+            "employee_leave_clearance.employee_leave_clearance.doctype.employee_leave_clearance_a_001_doctype.employee_leave_clearance_a_001_doctype.adding_per_salary_components",
+        ]
+    }
+}
+
+
+doctype_js = {
+	"Salary Slip": "public/js/annual_leave_hrms_a_01.js",
+	"Leave Application": "public/js/annual_leave_hrms_a_01.js"
+}
+
+
+fixtures = [ {"dt": "Custom Field","filters": [["module", "=", "Employee Leave Clearance"]] }]
+
